@@ -1,0 +1,58 @@
+.clients-logo-style {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clients {
+  padding-top: 94px;
+
+  padding-bottom: 94px;
+}
+
+.clients h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+  color: $font-main-color;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.button-icon {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  background-position: center;
+  background-size: auto;
+
+  background-color: $font-color-light;
+  fill: #afb1b8;
+  width: 170px;
+  height: 90px;
+  background-repeat: no-repeat;
+
+  border: 1px solid #afb1b8;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-icon:hover,
+.button-icon:active,
+.button-icon:focus {
+  background-color: $font-color-light;
+  fill: $font-second-color;
+  border: 1px solid $font-second-color;
+}
+
+.clients li:not(:last-child) {
+  margin-right: 30px;
+}
