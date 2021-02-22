@@ -1,58 +1,71 @@
-.clients-logo-style {
+@mixin centeredFlex($flex: flex) {
+  display: $flex;
+  justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.clients {
-  padding-top: 94px;
-
-  padding-bottom: 94px;
-}
-
-.clients h2 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.167;
-  letter-spacing: 0.03em;
-  color: $font-main-color;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
-.button-icon {
-  display: flex;
-  flex-direction: row;
-
-  align-items: center;
-  background-position: center;
-  background-size: auto;
-
-  background-color: $font-color-light;
-  fill: #afb1b8;
-  width: 170px;
-  height: 90px;
-  background-repeat: no-repeat;
-
-  border: 1px solid #afb1b8;
-  border-width: 1px;
-  border-radius: 4px;
-  padding: 0;
-  cursor: pointer;
+/* Анимация */
+@mixin animated($transition-property) {
+  transition-property: $transition-property;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-icon:hover,
-.button-icon:active,
-.button-icon:focus {
-  background-color: $font-color-light;
-  fill: $font-second-color;
-  border: 1px solid $font-second-color;
+.clients {
+  padding: 94px 0;
+  background-color: $general-background-color;
 }
 
-.clients li:not(:last-child) {
+.clients__heading {
+  color: $primary-text-color;
+
+  font-size: 36px;
+  font-weight: $bold;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.clients__logo {
+  width: 170px;
+  height: 90px;
+}
+
+.clients__logo:not(:last-child) {
   margin-right: 30px;
+}
+
+.clients__list {
+  display: flex;
+}
+
+.clients__link {
+  @include centeredFlex();
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid $fill-color;
+  border-radius: 4px;
+  background-color: $general-background-color;
+  color: $accent-color;
+
+  @include animated(border);
+}
+
+.clients__icon {
+  fill: $fill-color;
+  @include animated(fill);
+}
+
+.clients__link:hover .clients__icon,
+.clients__link:focus .clients__icon {
+  fill: currentColor;
+}
+
+.clients__link:hover,
+.clients__link:focus {
+  border: 1px solid $accent-color;
+  outline: none;
 }
